@@ -1,0 +1,58 @@
+<!-- Write CSS for differentiating padding and margin concepts. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Padding vs Margin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            border: 2px solid #000;
+            margin: 20px;
+            padding: 20px;
+        }
+        .no-margin {
+            margin: 0;
+        }
+        .no-padding {
+            padding: 0;
+        }
+        .example {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Padding vs Margin</h1>
+    
+    <div class="example">
+        <h2>Box with Padding and Margin</h2>
+        <div class="box">This box has 20px padding and 20px margin.</div>
+    </div>
+
+    <div class="example">
+        <h2>Box without Margin</h2>
+        <div class="box no-margin">This box has 20px padding and no margin.</div>
+    </div>
+
+    <div class="example">
+        <h2>Box without Padding</h2>
+        <div class="box no-padding">This box has no padding and 20px margin.</div>
+        Aayush Chandra Pradhan
+    </div>
+
+    <!-- <div class="example">
+        <h2>Explanation</h2>
+        <p>In the first box, you can see the space inside the border (padding) and outside the border (margin).</p>
+        <p>In the second box, there is no margin, so the box touches the surrounding elements, but it still has padding inside.</p>
+        <p>In the third box, there is no padding, so the content is right against the border, but there is still space around the box (margin).</p>
+    </div> -->
+</body>
+</html>

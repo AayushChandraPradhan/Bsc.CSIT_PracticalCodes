@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Object-oriented JavaScript Example</title>
+</head>
+
+<body>
+    <h1>Object-oriented JavaScript Example</h1>
+
+    <script>
+        class Person {
+
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+
+            greet() {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            }
+        }
+
+
+        let person1 = new Person("Aayush Chandra Pradhan", 21);
+
+
+        console.log(person1.name);
+        console.log(person1.age);
+
+
+        person1.greet(); // open console to get the output
+
+    </script>
+</body>
+
+</html>

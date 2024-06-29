@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Events</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Click Event
+            $("#clickButton").click(function(){
+                alert("Button Clicked!");
+            });
+
+            // Hover Event
+            $("#hoverDiv").hover(function(){
+                $(this).css("background-color", "yellow");
+            }, function(){
+                $(this).css("background-color", "white");
+            });
+
+            // Double Click Event
+            $("#dblclickDiv").dblclick(function(){
+                alert("Double Clicked!");
+            });
+
+            // Focus Event
+            $("#focusInput").focus(function(){
+                $(this).css("background-color", "yellow");
+            });
+            $("#focusInput").blur(function(){
+                $(this).css("background-color", "white");
+            });
+
+            // Key Press Event
+            $("#keyPressInput").keypress(function(event){
+                $("#keyPressOutput").html("Key Pressed: " + event.key);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="clickButton">Click Me</button>
+    <div id="hoverDiv" style="width: 200px; height: 200px; border: 1px solid black;">Hover over me || Aayush Chandra Pradhan</div>
+    <div id="dblclickDiv">Double Click Me</div>
+    <input type="text" id="focusInput" placeholder="Click to Focus">
+    <input type="text" id="keyPressInput">
+    <div id="keyPressOutput"></div>
+</body>
+</html>

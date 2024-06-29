@@ -1,0 +1,38 @@
+<!-- Write a HTML document that implements meta, audio, video and canvas tag in single document. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>HTML5 Elements Example</title>
+
+</head>
+
+<body>
+    <div>Aayush Chandra Pradhan</div>
+    <h2>HTML5 Elements Example</h2>
+    <h3>Audio Element</h3>
+    <audio controls>
+        <source src="audio_example.mp3" type="audio/mpeg">
+    </audio>
+
+    <h3>Video Element</h3>
+    <video controls width="600">
+        <source src="video_example.mp4" type="video/mp4">
+    </video>
+
+    <h3>Canvas Element</h3>
+    <canvas id="myCanvas" width="600" height="400">
+    </canvas>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const context = canvas.getContext('2d');
+
+        context.fillStyle = 'red';
+        context.fillRect(50, 50, 200, 100);
+    </script>
+</body>
+
+</html>

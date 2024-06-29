@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Parse and Stringify Example</title>
+</head>
+
+<body>
+    <script>
+        // Sample JSON string
+        const jsonString = `{
+            "name": "Aayush Chandra Pradhan",
+            "age": 21,
+            "email": "aayushpradhan4@gmail.com",
+            "address": {
+                "street": "Jhamsikhel",
+                "city": "Patan",
+                "country": "Nepal"
+            },
+            "phoneNumbers": [
+                "9803123456",
+                "987-654-3210"
+            ],
+            "isActive": true
+        }`;
+
+        // Parse JSON string into JavaScript object
+        const jsonObject = JSON.parse(jsonString);
+
+        console.log('Parsed JSON object:', jsonObject);
+        console.log('Name:', jsonObject.name);
+        console.log('Age:', jsonObject.age);
+        console.log('Email:', jsonObject.email);
+        console.log('Address:', `${jsonObject.address.street}, ${jsonObject.address.city}, ${jsonObject.address.country}`);
+        console.log('Phone Numbers:', jsonObject.phoneNumbers.join(', '));
+        console.log('Is Active:', jsonObject.isActive);
+
+        // JavaScript object to be converted to JSON string
+        const user = {
+            name: "ACP",
+            age: 20,
+            email: "ACP@GMAIL.COM",
+            address: {
+                street: "WWE",
+                city: "SMACKDWN",
+                country: "RAW"
+            },
+            phoneNumbers: [
+                "12345658745",
+                "15489652364"
+            ],
+            isActive: false
+        };
+
+        // Convert JavaScript object into JSON string
+        const jsonStringified = JSON.stringify(user, null, 2);
+
+        console.log('Stringified JSON string:', jsonStringified);
+    </script>
+</body>
+
+</html>
