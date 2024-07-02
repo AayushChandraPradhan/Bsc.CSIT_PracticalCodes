@@ -1,16 +1,57 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 #include <time.h>
 
-void printExecutionTime(clock_t start, clock_t end) {
+int min(int a, int b, int c)
+{
+    if (a <= b && a <= c)
+        return a;
+    if (b <= a && b <= c)
+        return b;
+    return c;
+}
+
+int editDistance(char *str1, char *str2, int m, int n)
+{
+    int dp[m + 1][n + 1];
+
+    for (int i = 0; i <= m; i++)
+    {
+        for (int j = 0; j <= n; j++)
+        {
+            if (i == 0)
+            {
+                dp[i][j] = j;
+            }
+            else if (j == 0)
+            {
+                dp[i][j] = i;
+            }
+            else if (str1[i - 1] == str2[j - 1])
+            {
+                dp[i][j] = dp[i - 1][j - 1];
+            }
+            else
+            {
+                dp[i][j] = 1 + min(dp[i - 1][j],      // Remove
+                                   dp[i][j - 1],      // Insert
+                                   dp[i - 1][j - 1]); // Replace
+            }
+        }
+    }
+    return dp[m][n];
+}
+
+void printExecutionTime(clock_t start, clock_t end)
+{
     double cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
     printf("\nTime executed: %f seconds\n", cpu_time_used);
 }
 
-int main() {
-    char str1[100], str2[100], temp[100];
-    int choice;
+int main()
+{
+    char str1[100], str2[100];
     clock_t start, end;
 
     printf("Enter string 1: ");
@@ -21,52 +62,11 @@ int main() {
     fgets(str2, sizeof(str2), stdin);
     str2[strcspn(str2, "\n")] = '\0'; // Remove newline character if present
 
-    printf("Select operation:\n");
-    printf("1. Concatenate\n");
-    printf("2. Substring Extraction\n");
-    printf("3. Replace substring\n");
-    printf("Enter your choice: ");
-    scanf("%d", &choice);
-    getchar(); // Consume newline character
-
     start = clock();
-
-    switch (choice) {
-        case 1:
-            strcpy(temp, str1);
-            strcat(temp, str2);
-            printf("Concatenated string: %s\n", temp);
-            break;
-        case 2:
-            printf("Enter start index and length for substring (space-separated): ");
-            int startIdx, length;
-            scanf("%d %d", &startIdx, &length);
-            strncpy(temp, str1 + startIdx, length);
-            temp[length] = '\0'; // Null terminate the substring
-            printf("Extracted substring: %s\n", temp);
-            break;
-        case 3:
-            printf("Enter substring to replace and its replacement: ");
-            char oldSub[50], newSub[50];
-            scanf("%s %s", oldSub, newSub);
-            
-            char *pos = strstr(str1, oldSub);
-            if (pos != NULL) {
-                strcpy(temp, str1);
-                pos = strstr(temp, oldSub);
-                int index = pos - temp;
-                strcpy(temp + index, newSub);
-                strcat(temp, pos + strlen(oldSub));
-                printf("String after replacement: %s\n", temp);
-            } else {
-                printf("Substring not found in string 1.\n");
-            }
-            break;
-        default:
-            printf("Invalid choice.\n");
-    }
-
+    int result = editDistance(str1, str2, strlen(str1), strlen(str2));
     end = clock();
+
+    printf("The minimum edit distance is: %d\n", result);
     printExecutionTime(start, end);
 
     return 0;
