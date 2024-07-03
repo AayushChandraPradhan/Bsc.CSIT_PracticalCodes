@@ -1,0 +1,1 @@
+The average of the number is 1482236.000000
