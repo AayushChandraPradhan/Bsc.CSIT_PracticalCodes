@@ -1,0 +1,7 @@
+<!ELEMENT class (student+)>
+<!ELEMENT student (name, branch, cgpa)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT branch (#PCDATA)>
+<!ELEMENT cgpa (#PCDATA)>
+<!ATTLIST student
+    id ID #REQUIRED>
