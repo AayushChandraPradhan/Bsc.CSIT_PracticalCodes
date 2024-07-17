@@ -1,0 +1,9 @@
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (title, author, price, publisher)>
+<!ATTLIST book id ID #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT publisher (name, location)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT location (#PCDATA)>

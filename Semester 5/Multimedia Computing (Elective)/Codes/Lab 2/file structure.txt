@@ -1,0 +1,5 @@
+g++ -o shape_transform shape_transform.cpp -IC:\path\to\SDL2\include -LC:\path\to\SDL2\lib -lmingw32 -lSDL2main -lSDL2
+
+./shape_transform
+
+g++ -o bmp_viewer bmp_viewer.cpp -IC:\Users\absy4\Desktop\SDL\SDL2-Setup\src\include\SDL2 -LC:\Users\absy4\Desktop\SDL\SDL2-Setup\src\lib -lmingw32 -lSDL2main -lSDL2
