@@ -15,5 +15,5 @@ print(f"Disk size of TIFF file: {tif_size} bytes")
 with open(jpg_image_path, 'rb') as f:
     actual_jpg_size = len(f.read())
 print(f"Actual size of JPG file: {actual_jpg_size} bytes")
-print("Khusboo Karki")
+print("ACP")
 
