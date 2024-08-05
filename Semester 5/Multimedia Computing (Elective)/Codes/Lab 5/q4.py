@@ -18,5 +18,4 @@ input_string = "AAAABBBBBCCDDDFFFF"
 result = run_length_encoding(input_string)
 print("Input string:", input_string)
 print("Result:", result)
-print("Khusboo Karki")
 

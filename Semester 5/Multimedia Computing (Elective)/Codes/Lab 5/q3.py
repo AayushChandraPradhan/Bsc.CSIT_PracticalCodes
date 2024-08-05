@@ -18,5 +18,4 @@ def dct(signal):
 signal = np.array([10, 20, 30, 40, 55])
 result = dct(signal)
 print(result)
-print("Khusboo Karki")
 
