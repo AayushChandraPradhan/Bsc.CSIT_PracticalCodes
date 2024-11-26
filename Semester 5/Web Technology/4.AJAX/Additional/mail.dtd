@@ -1,5 +1,0 @@
-<!ELEMENT mail (to, from, subject, message)>
-<!ELEMENT to (#PCDATA)>
-<!ELEMENT from (#PCDATA)>
-<!ELEMENT subject (#PCDATA)>
-<!ELEMENT message (#PCDATA)>
